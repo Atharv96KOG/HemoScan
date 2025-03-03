@@ -1,0 +1,88 @@
+/* Instructions Section */
+.hb-instructions {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hb-instructions h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Instruction Sections */
+.instruction-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Images */
+.instruction-image {
+    width: 250px;
+    height: auto;
+}
+
+/* Instruction Text */
+.instruction-text {
+    max-width: 600px;
+}
+
+.instruction-text h3 {
+    font-size: 22px;
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+.instruction-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instruction-text ul li {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Click Now Button */
+.click-btn {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.click-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .instruction-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .instruction-image {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 250px;
+    }
+    .instruction-text {
+        text-align: center;
+    }
+}

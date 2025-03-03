@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About</title>
+      <link rel="stylesheet" href="./css/hbScan.css">
+      <link rel="stylesheet" href="plugins/slick/slick.css">
+      <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+      <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/contact.css" rel="stylesheet">
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+      <style>
+            body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  background-color: #f9f9f9;
+            }
+
+            .navbar {
+                  background: #f4d3d3;
+                  border: none;
+                  padding: 10px 0;
+                  text-align: center;
+            }
+
+            .navbar-brand img {
+                  max-height: 50px;
+            }
+
+            .nav {
+                  display: flex;
+                  justify-content: center;
+                  list-style: none;
+                  padding: 0;
+            }
+
+            .nav li {
+                  margin: 0 20px;
+            }
+
+            .nav a {
+                  color: black;
+                  font-weight: bold;
+                  text-decoration: none;
+                  font-size: 18px;
+            }
+
+            /* Team Section */
+            .team-section {
+                  padding: 50px 0;
+                  text-align: center;
+            }
+
+            .team-title {
+                  font-size: 28px;
+                  font-weight: bold;
+                  margin-bottom: 20px;
+            }
+
+            .team-content {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  max-width: 900px;
+                  margin: 0 auto;
+                  text-align: left;
+                  gap: 30px;
+                  background: #fff;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .team-image {
+                  width: 300px;
+                  border-radius: 10px;
+                  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .team-text {
+                  flex: 1;
+            }
+
+            .team-text h3 {
+                  font-size: 24px;
+                  font-weight: bold;
+                  margin-bottom: 10px;
+            }
+
+            .team-text p {
+                  font-size: 16px;
+                  line-height: 1.6;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                  .team-content {
+                        flex-direction: column;
+                        text-align: center;
+                  }
+
+                  .team-image {
+                        width: 80%;
+                  }
+            }
+      </style>
+</head>
+</head>
+<body>
+            <nav class="navbar navbar-default" style="background: #f4d3d3; border: none; padding: 2px 0;">
+                  <div class="container">
+                        <div class="navbar-header" style="display: flex; align-items: center;">
+                        <a class="navbar-brand" href="index.html" style="padding: 10px 15px;">
+                              <img src="images/logo.png" alt="Medic Logo" width="130" style="max-height: 50px;">
+                        </a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                              aria-expanded="false">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" style="display: flex; align-items: center; list-style: none; padding: 0;">
+                              <li class="active" style="margin-right: 20px;">
+                                    <a href="index.html" style="color: rgb(0, 0, 0); font-weight: bold; text-decoration: none; font-size: 18px;">
+                                    Home
+                                    </a>
+                              </li>
+                              <li style="margin-right: 20px;">
+                                    <a href="about.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 18px;">
+                                    About
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="contact.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 18px;">
+                                    Contact
+                                    </a>
+                              </li>
+                        </ul>
+                        </div>
+                  </div>
+            </nav>
+      </div>
+      <!-- Team Section -->
+      <!-- Team Section -->
+      <section class="team-section">
+            <div class="container">
+                  <h2 class="team-title">Meet Our Team</h2>
+                  <div class="team-content">
+                        <img src="./images/team.jpg" alt="Our Team" class="team-image">
+                        <div class="team-text">
+                              <h3>We Are HemoScan</h3>
+                              <p>
+                                    We are a passionate team of 5 second-year B.Tech students from Computer Science - AIML at 
+                                    Vishwakarma Institute of Technology, Pune. Our enthusiasm for innovation and technology drives 
+                                    us to create impactful solutions like HemoScan.
+                              </p>
+                              <p>
+                                    With a strong foundation in AI, machine learning, and healthcare applications, we aim to make 
+                                    hemoglobin monitoring more accessible and user-friendly. Our dedication to problem-solving and 
+                                    teamwork helps us push the boundaries of AI-driven healthcare.
+                              </p>
+                              <p>
+                                    Join us on our journey as we strive to bridge the gap between technology and healthcare!
+                              </p>
+                        </div>
+                  </div>
+            </div>
+      </section>
+</body>
+</html>

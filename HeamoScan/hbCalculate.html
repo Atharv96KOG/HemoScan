@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB-Calculate</title>
+    <link rel="stylesheet" href="./css/hbScan.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav class="navbar navbar-default" style="background: #f4d3d3; border: none; padding: 2px 0;">
+            <div class="container">
+                <div class="navbar-header" style="display: flex; align-items: center;">
+                    <a class="navbar-brand" href="index.html" style="padding: 10px 15px;">
+                        <img src="images/logo.png" alt="Medic Logo" width="130" style="max-height: 50px;">
+                    </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+    
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="display: flex; align-items: center; list-style: none; padding: 0;">
+                        <li class="active" style="margin-right: 20px;">
+                            <a href="index.html" style="color: rgb(0, 0, 0); font-weight: bold; text-decoration: none; font-size: 18px;">
+                                Home
+                            </a>
+                        </li>
+                        <li style="margin-right: 20px;">
+                            <a href="about.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 18px;">
+                                About
+                            </a>
+                        </li>
+                        <li style="margin-right: 20px;">
+                            <a href="service.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 18px;">
+                                Service
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" style="color: rgb(0, 0, 0); text-decoration: none; font-size: 18px;">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Instructions Section -->
+    <section class="hb-instructions">
+        <div class="container">
+            <h2>How to Scan Your Nails for HB Calculation</h2>
+
+            <!-- Live Scanning Section -->
+            <div class="instruction-section">
+                <div class="instruction-text">
+                    <h3>1. Live Scanning of Nails</h3>
+                    <p>Follow these steps for an accurate HB reading:</p>
+                    <ul>
+                        <li>✅ Position the camera so **only your nails** are visible.</li>
+                        <li>✅ Ensure **no objects or people** are near you.</li>
+                        <li>✅ Maintain a **proper distance** for a clear scan.</li>
+                        <li>✅ Use a **clean, undamaged camera** for accuracy.</li>
+                    </ul>
+                    <button id="op" class="click-btn"><a href="http://127.0.0.1:5000">Scan Now</a></button>
+                </div>
+                <img src="./images/hbRange/teenBoy.jpg" alt="Live Scanning" class="instruction-image">
+            </div>
+
+            <!-- Upload Image Section -->
+            <div class="instruction-section">
+                <div class="instruction-text">
+                    <h3>2. Upload an Existing Image</h3>
+                    <p>Ensure your image meets these requirements:</p>
+                    <ul>
+                        <li>✅ The image should be **clear and zoomed in** so nail color is visible.</li>
+                        <li>✅ **Allowed formats:** <strong>JPG & PNG</strong> only.</li>
+                    </ul>
+                    <button class="click-btn">Upload image</button>
+                </div>
+                <img src="./images/hbRange/teenGirl.jpeg" alt="Upload Image" class="instruction-image">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hemoglobin Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            animation: slideIn 0.7s ease-in-out;
+        }
+
+        h1 {
+            color: #1976d2;
+            font-size: 28px;
+            margin-bottom: 15px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #1976d2;
+            background: #e3f2fd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+        }
+
+        input[type="file"]:hover {
+            background: #bbdefb;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #1976d2, #64b5f6);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: transform 0.3s, background 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0d47a1, #42a5f5);
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #0d47a1;
+            font-size: 22px;
+        }
+
+        video {
+            border: 3px solid #1976d2;
+            border-radius: 12px;
+            margin: 12px 0;
+            width: 100%;
+        }
+
+        ul {
+            text-align: left;
+            margin: 10px auto;
+            display: inline-block;
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        ul li {
+            list-style: none;
+            background: #bbdefb;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        img {
+            border: 3px solid #64b5f6;
+            border-radius: 12px;
+            margin: 15px 0;
+            width: 100%;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1976d2;
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        function captureImage() {
+            const video = document.getElementById('video');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            canvas.toBlob(blob => {
+                const fileInput = document.getElementById('file');
+                const file = new File([blob], 'captured_image.png', { type: 'image/png' });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                fileInput.files = dataTransfer.files;
+
+                alert("✅ Image Captured Successfully! Ready for Prediction.");
+            }, 'image/png');
+        }
+
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    document.getElementById('video').srcObject = stream;
+                }).catch(err => {
+                    alert('⚠️ Camera access denied or not available.');
+                    console.error(err);
+                });
+        }
+    </script>
+</head>
+<body onload="startCamera()">
+    <div class="container">
+        <h1>Hemoglobin Prediction System</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" id="file" name="file" required>
+            <button type="submit">🔍 Predict Hb Value</button>
+        </form>
+
+        <h2>Or Capture Image from Webcam</h2>
+        <video id="video" autoplay></video>
+        <button onclick="captureImage()">📸 Capture Image</button>
+
+        {% if result %}
+            <h2>Prediction Result</h2>
+            <img src="{{ result.image_path }}" alt="Uploaded Image">
+            <p>Predicted Hb Value: <strong>{{ result.predicted_hb }}</strong></p>
+
+            <h3>Extracted Features</h3>
+            <ul>
+                {% for key, value in result.features.items() %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
